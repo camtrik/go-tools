@@ -1,4 +1,4 @@
-module github.com/camtrik/go-tools/name_formatter
+module github.com/camtrik/go-tools
 
 go 1.22.2
 

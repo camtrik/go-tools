@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/camtrik/go-tools/name_formatter/cmd"
+	"github.com/camtrik/go-tools/cmd"
 )
 
 func main() {
