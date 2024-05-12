@@ -4,7 +4,7 @@ import (
 	"log"
 	"strings"
 
-	"github.com/camtrik/go-tools/name_formatter/internal/word"
+	"github.com/camtrik/go-tools/internal/word"
 	"github.com/spf13/cobra"
 )
 
