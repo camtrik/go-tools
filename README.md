@@ -1,4 +1,3 @@
-
 # Go Tools Collection
 
 ## Overview
@@ -39,4 +38,48 @@ Provides utilities for processing and manipulating date and time formats.
 - **Flags**:
   - `--calculate` or `-c`: The base time for calculation, e.g., `"2022-01-01 12:00:00"` or a UNIX timestamp. Defaults to the current time if not specified.
   - `--duration` or `-d`: The duration to add to the base time, e.g., `"1h"`, `"1m"`, `"1s"`.
+
+## 3. SQL to Struct Generator
+Converts SQL database tables into Go struct definitions, facilitating quicker integration between database structures and Go code.
+
+### Features
+
+- **Automatically generate Go structs from SQL table definitions**.
+- **Supports custom types and tagging for JSON serialization**.
+
+### Usage
+
+To generate Go structs from a database table:
+
+```bash
+go run main.go sql struct --username username --password oasswird --db database_name --table table_name
+```
+
+- **Flags**:
+  - `--username` or `-u`: Username for database access.
+  - `--password` or `-p`: Password for database access.
+  - `--db` or `-d`: Database name.
+  - `--table` or `-t`: Table name to convert to Go struct.
+
+### Example Output
+The tool will output Go structs to standard output, complete with JSON tags and comments derived from the database table structure. For example:
+
+```go
+type Users struct {
+    // id
+    Id int32 `json:"id"`
+    // name
+    Name string `json:"name"`
+    // email
+    Email string `json:"email"`
+    // created_at
+    CreatedAt time.Time `json:"created_at"`
+}
+
+func (model Users) TableName() string {
+    return "users"
+}
+```
+
+This output facilitates immediate use within Go applications, making database interactions straightforward and type-safe.
 

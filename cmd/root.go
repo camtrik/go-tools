@@ -11,4 +11,5 @@ func Execute() error {
 func init() {
 	rootCmd.AddCommand(wordCam)
 	rootCmd.AddCommand(timeCmd)
+	rootCmd.AddCommand(sqlCmd)
 }

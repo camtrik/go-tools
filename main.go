@@ -12,4 +12,3 @@ func main() {
 		log.Fatalf("Error: %v", err)
 	}
 }
-
